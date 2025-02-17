@@ -24,3 +24,18 @@ function actualizarLista() {
         listaElemntos.appendChild(li);
     }
 }
+//Implementa una función para sortear los amigos
+function sortearAmigo(){
+    if(listaAmigos.length === 0){
+        alert("La lista está vacía. Agregue nombres antes de sortear.");
+        return;
+    }
+    let indiceAleatorio = Math.floor(Math.random() * listaAmigos.length);
+    let amigoSeleccionado = listaAmigos[indiceAleatorio];
+
+    let resultadoElemento = document.getElementById("resultado");
+    resultadoElemento.innerHTML = "";
+    let li = document.createElement("li");
+    li.textContent = `🎉 El amigo secreto es: ${amigoSeleccionado}! 🎉`;
+    resultadoElemento.appendChild(li);
+}
